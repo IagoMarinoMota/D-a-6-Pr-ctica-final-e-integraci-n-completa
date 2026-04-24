@@ -1,0 +1,15 @@
+DESPLIEGUE COMPLETADO
+
+
+Release: {{ .Release.Name }}
+
+MySQL está disponible en:
+- Host: mysql
+- Puerto: 3306
+
+Base de datos:
+- mydb (si el hook post-install se ejecutó)
+
+HOOKS
+- pre-install: lanza un pod en el que se ejecuta un comando
+- post-upgrade: ejecuta migraciones

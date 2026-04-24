@@ -1,0 +1,24 @@
+global:
+  labels:
+    environment: dev
+backend:
+  rootPassword: root
+  database: mydb
+  labels:
+    app: mysql
+  replicaCount: 1
+  image:
+    repository: mysql
+    pullPolicy: IfNotPresent
+    tag: "mysql"
+  service:
+    type: ClusterIP
+    port: 3306
+frontend:
+  labels:
+    app: curl
+  replicaCount: 1
+  image:
+    repository: curlimages/curl
+    pullPolicy: IfNotPresent
+    tag: "curl"
